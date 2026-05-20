@@ -40,7 +40,6 @@ import {
 } from './data';
 
 import Simulator from './components/Simulator';
-import InteractiveMindmap from './components/InteractiveMindmap';
 import BookingModal from './components/BookingModal';
 
 export default function App() {
@@ -99,13 +98,13 @@ export default function App() {
   // Helper to map icons dynamically from strings
   const renderHeroIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Eye': return <Eye className="w-4 h-4 text-cyan-500" />;
-      case 'MessageSquare': return <MessageSquare className="w-4 h-4 text-brand-pink" />;
-      case 'Heart': return <Heart className="w-4 h-4 text-rose-500 animate-pulse" />;
-      case 'Users': return <Users className="w-4 h-4 text-emerald-500" />;
-      case 'Clock': return <Clock className="w-4 h-4 text-amber-500" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-4 h-4 text-indigo-505" />;
-      default: return <Sparkles className="w-4 h-4 text-slate-500" />;
+      case 'Eye': return <Eye className="w-5.5 h-5.5 text-cyan-500" />;
+      case 'MessageSquare': return <MessageSquare className="w-5.5 h-5.5 text-brand-pink" />;
+      case 'Heart': return <Heart className="w-5.5 h-5.5 text-rose-500 animate-pulse" />;
+      case 'Users': return <Users className="w-5.5 h-5.5 text-emerald-500" />;
+      case 'Clock': return <Clock className="w-5.5 h-5.5 text-amber-500" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5.5 h-5.5 text-indigo-505" />;
+      default: return <Sparkles className="w-5.5 h-5.5 text-slate-500" />;
     }
   };
 
@@ -227,16 +226,16 @@ export default function App() {
 
           {/* Nav link items */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-semibold">
-            <a href="#about" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">Giới thiệu</a>
-            <a href="#mindmap-section" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">Tính năng</a>
-            <a href="#live-simulator" className="text-slate-650 hover:text-brand-cyan transition-colors duration-200 flex items-center gap-1 font-mono text-xs">
+            <a href="#about" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">Giới thiệu</a>
+            <a href="#features" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">Tính năng</a>
+            <a href="#live-simulator" className="text-slate-800 hover:text-brand-cyan transition-colors duration-200 flex items-center gap-1 font-mono text-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan inline-block animate-ping"></span>
-              Trình Mô Phỏng
+              Demo
             </a>
-            <a href="#highlights" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">Lợi ích</a>
-            <a href="#feedbacks-section" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">Khách hàng</a>
-            <a href="#pricing-section" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">Bảng giá</a>
-            <a href="#faq" className="text-slate-650 hover:text-slate-905 transition-colors duration-200">FAQ</a>
+            <a href="#highlights" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">Lợi ích</a>
+            <a href="#feedbacks-section" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">Khách hàng</a>
+            <a href="#pricing-section" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">Bảng giá</a>
+            <a href="#faq" className="text-slate-800 hover:text-brand-pink transition-colors duration-200">FAQ</a>
           </nav>
 
           {/* Header CTA Button */}
@@ -255,34 +254,29 @@ export default function App() {
         {/* Left Side Content */}
         <div className="lg:col-span-6 space-y-8 text-left">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 select-none">
-              <span className="w-2 h-2 rounded-full bg-brand-pink animate-pulse"></span>
-              <span className="text-[10px] font-bold text-brand-pink uppercase tracking-widest font-mono">Bứt Phá TikTok Live 2026</span>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.1] font-display">
               Tăng View TikTok Live <br />
               <span className="gradient-text-pink-cyan">Chỉ Sau Vài Phút</span>
             </h1>
 
-            <p className="text-base text-slate-600 leading-relaxed max-w-lg">
+            <p className="text-base text-slate-700 font-medium leading-relaxed max-w-lg">
               Giúp phiên livestream của bạn trở nên đông người, ngập tràn bình luận hỏi mua hàng, tạo hiệu ứng bão đơn cực nhanh và gia tăng uy tín chốt đơn lập tức.
             </p>
           </div>
 
           {/* 6 Grid features block from the screenshot with colorful 3D depth and custom styles */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl pb-2">
             {HERO_FEATURES.map((feat) => {
               const cardStyle = getHeroCardStyle(feat.id);
               return (
                 <div
                   key={feat.id}
-                  className={`group flex items-center gap-3.5 p-3.5 bg-gradient-to-tr ${cardStyle.bg} border border-slate-200/80 border-b-[4px] ${cardStyle.borderB} rounded-xl transition-all duration-150 select-none ${cardStyle.shadow} hover:-translate-y-1 hover:border-b-[5px] active:translate-y-[2px] active:border-b-[1px]`}
+                  className={`group flex items-center gap-4.5 p-4 bg-gradient-to-tr ${cardStyle.bg} border border-slate-200/80 border-b-[4px] ${cardStyle.borderB} rounded-2xl transition-all duration-150 select-none ${cardStyle.shadow} hover:-translate-y-1 hover:border-b-[5px] active:translate-y-[2px] active:border-b-[1px]`}
                 >
-                  <div className={`w-9 h-9 rounded-lg ${cardStyle.iconBg} border flex items-center justify-center shrink-0 group-hover:scale-110 duration-200 transition-all`}>
+                  <div className={`w-11 h-11 rounded-xl ${cardStyle.iconBg} border flex items-center justify-center shrink-0 group-hover:scale-110 duration-200 transition-all`}>
                     {renderHeroIcon(feat.icon)}
                   </div>
-                  <span className={`text-xs font-bold tracking-tight font-sans transition-colors duration-150 ${cardStyle.text}`}>
+                  <span className={`text-sm sm:text-base font-extrabold tracking-tight font-sans transition-colors duration-150 ${cardStyle.text}`}>
                     {feat.text}
                   </span>
                 </div>
@@ -294,18 +288,23 @@ export default function App() {
           <div className="flex flex-col sm:flex-row gap-4 max-w-md w-full">
             <button
               onClick={() => triggerBooking('free-demo')}
-              className="flex-1 h-12 rounded-xl bg-gradient-to-r from-brand-pink to-rose-600 border border-transparent border-b-[4px] border-b-rose-800 text-white font-bold text-xs tracking-widest uppercase transition-all duration-150 flex items-center justify-center gap-2.5 shadow-[0_6px_15px_rgba(254,44,85,0.22)] hover:brightness-110 hover:translate-y-[1px] hover:border-b-[3px] active:translate-y-[3px] active:border-b-[1px] cursor-pointer"
+              className="flex-1 h-12 rounded-xl bg-gradient-to-r from-brand-pink to-rose-600 border border-transparent border-b-[4px] border-b-rose-800 text-white font-extrabold text-sm tracking-wide uppercase transition-all duration-150 flex items-center justify-center gap-2.5 shadow-[0_6px_15px_rgba(254,44,85,0.22)] hover:brightness-110 hover:translate-y-[1px] hover:border-b-[3px] active:translate-y-[3px] active:border-b-[1px] cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-white animate-pulse shrink-0" />
+              <Sparkles className="w-5 h-5 text-white animate-pulse shrink-0" />
               <span>Đăng Ký Bản Demo</span>
             </button>
-            <a
-              href="#live-simulator"
-              className="flex-1 h-12 rounded-xl bg-white border border-slate-200 border-b-[4px] border-b-slate-350 text-slate-700 font-bold text-xs tracking-widest uppercase flex items-center justify-center gap-2.5 transition-all duration-150 shadow-[0_4px_10px_rgba(0,0,0,0.03)] hover:bg-slate-50 hover:translate-y-[1px] hover:border-b-[3px] active:translate-y-[3px] active:border-b-[1px] cursor-pointer"
+            <button
+              onClick={() => {
+                const element = document.getElementById('live-simulator');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="flex-1 h-12 rounded-xl bg-white border border-slate-200 border-b-[4px] border-b-slate-350 text-slate-700 font-extrabold text-sm tracking-wide uppercase flex items-center justify-center gap-2.5 transition-all duration-150 shadow-[0_4px_10px_rgba(0,0,0,0.03)] hover:bg-slate-50 hover:translate-y-[1px] hover:border-b-[3px] active:translate-y-[3px] active:border-b-[1px] cursor-pointer"
             >
-              <Video className="w-4 h-4 text-brand-pink shrink-0" />
+              <Video className="w-5 h-5 text-brand-pink shrink-0" />
               <span>Xem Demo trực tiếp</span>
-            </a>
+            </button>
           </div>
         </div>
 
@@ -461,15 +460,12 @@ export default function App() {
       </section>
 
       {/* 4. Realtime Custom Live Boost Simulator Panel with CTA */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center" id="demo">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-[10px] font-mono tracking-widest text-[#06B6D4] px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20 font-bold uppercase">
-            Hệ thống thời gian thực
-          </span>
-          <h2 className="text-3xl font-extrabold font-display text-slate-900 mt-4">
+      <section className="relative z-10 max-w-[1320px] mx-auto px-6 py-12 sm:py-16 text-center" id="live-simulator">
+        <div className="text-center max-w-4xl mx-auto mb-10">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display text-slate-900 tracking-tight mt-1 leading-[1.12]">
             Xem MKT TikPro Hoạt Động Thực Tế
           </h2>
-          <p className="text-sm text-slate-600 mt-2.5 max-w-xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-700 font-semibold mt-4.5 max-w-2xl mx-auto leading-relaxed">
             Khám phá cách MKT TikPro tăng mắt xem, bình luận và tương tác livestream TikTok tự động.
           </p>
         </div>
@@ -509,21 +505,13 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. "Tính năng đột phá" Section Node mindmap selector */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center">
-        <InteractiveMindmap />
-      </section>
-
       {/* 7. Detailed Features Grid of 8 Small Cards */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 py-16" id="features">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-[10px] font-mono tracking-widest text-brand-pink uppercase font-bold px-2.5 py-1 rounded bg-brand-pink/10 border border-brand-pink/20">
-            Hộp công cụ toàn diện
-          </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-1">
             Đầy Đủ Tính Năng Phát Triển Luồng Lai
           </h2>
-          <p className="text-sm text-slate-600 mt-2.5">
+          <p className="text-sm text-slate-700 font-medium mt-2.5">
             MKT TikPro tích hợp tất cả công cụ chuyên sâu bạn cần để kiểm soát tỷ lệ tương tác của hàng ngàn tài khoản.
           </p>
         </div>
@@ -543,7 +531,7 @@ export default function App() {
                   <h4 className="text-sm font-bold text-slate-900 group-hover:text-brand-pink duration-200 transition-colors font-display">
                     {item.title}
                   </h4>
-                  <p className="text-xs text-slate-650 leading-normal">
+                  <p className="text-xs text-slate-800 font-semibold leading-normal">
                     {item.desc}
                   </p>
                 </div>
@@ -560,13 +548,10 @@ export default function App() {
       {/* 8. Customers Testimonials Section */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center" id="feedbacks-section">
         <div className="text-center max-w-xl mx-auto mb-12">
-          <span className="text-[10px] font-mono tracking-widest text-[#06B6D4] px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20 font-bold uppercase">
-            Khách hàng phản hồi
-          </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-1">
             Hơn 5.000+ Nhà Bán Hàng Tin Dùng
           </h2>
-          <p className="text-xs text-slate-650 mt-2">
+          <p className="text-xs text-slate-800 font-semibold mt-2">
             Xem kết quả bứt phá doanh số thực tế từ những shop quần áo, thực phẩm chức năng và gia dụng hàng đầu.
           </p>
         </div>
@@ -641,10 +626,7 @@ export default function App() {
       {/* 9. Bảng Giá MKT TikPro Section */}
       <section className="relative z-10 max-w-7xl mx-auto px-6 py-20 text-center" id="pricing-section">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-[10px] font-mono tracking-widest text-[#06B6D4] px-3 py-1 bg-cyan-500/10 rounded-full border border-cyan-500/20 font-bold uppercase">
-            Bảng giá tốt nhất
-          </span>
-          <h2 className="text-3xl font-black font-display text-slate-900 mt-4">
+          <h2 className="text-3xl font-black font-display text-slate-900 mt-1">
             Lựa Chọn Gói Phù Hợp Cho Doanh Nghiệp Của Bạn
           </h2>
           <p className="text-sm text-slate-600 mt-2.5">
@@ -709,7 +691,7 @@ export default function App() {
                   </div>
 
                   {/* Plan Features lists */}
-                  <ul className="space-y-3.5 text-xs text-slate-650">
+                  <ul className="space-y-3.5 text-xs text-slate-800 font-semibold">
                     {plan.features.map((feat, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -762,13 +744,10 @@ export default function App() {
       {/* 10. FAQ Accordion section */}
       <section className="relative z-10 max-w-4xl mx-auto px-6 py-16 text-left" id="faq">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-[10px] font-mono tracking-widest text-[#06B6D4] font-bold uppercase bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/20">
-            Giải đáp thắc mắc
-          </span>
-          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-4">
+          <h2 className="text-2xl md:text-3xl font-extrabold font-display text-slate-900 mt-1">
             Khách hàng thường băn khoăn gì?
           </h2>
-          <p className="text-xs text-slate-650 mt-2">
+          <p className="text-xs text-slate-800 font-semibold mt-2">
             Dưới đây là một số thông tin chi tiết giải quyết mọi nỗi lo lắng về thuật toán TikTok và bảo mật tài khoản.
           </p>
         </div>
@@ -810,57 +789,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 11. Immersive Action Footer */}
-      <footer className="relative z-10 mt-auto bg-slate-100 border-t border-slate-205 pt-16 pb-12 select-none" id="booking-cta border-none">
-        
-        {/* Contact Hotline & Zalo Callout card from screenshot */}
-        <div className="max-w-4xl mx-auto px-6 mb-12 text-center">
-          <div className="glass-card rounded-2xl p-6 lg:p-8 border border-slate-200 bg-white shadow-md flex flex-col items-center justify-center space-y-4">
-            <span className="text-xs font-mono text-slate-400 uppercase">TIKPRO HOTLINE HỖ TRỢ TRỰC TIẾP</span>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center text-cyan-600 animate-pulse">
-                <PhoneCall className="w-5 h-5" />
-              </div>
-              <a href="tel:0962323429" className="text-2xl md:text-3xl font-black font-mono text-slate-900 tracking-widest hover:text-cyan-600 transition-colors">
-                096 232 3429
-              </a>
-            </div>
-            <h4 className="text-sm font-bold text-brand-pink font-display">Nhận Demo Miễn Phí Ngay Hôm Thử</h4>
-            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-              <button
-                onClick={() => triggerBooking('free-demo')}
-                className="flex-1 py-3 px-5 bg-gradient-to-r from-brand-pink to-rose-600 rounded-xl text-white font-bold text-xs tracking-wider uppercase transition-all shadow-lg hover:brightness-110 active:scale-95 cursor-pointer shadow-brand-pink-glow"
-              >
-                Nhận hướng dẫn cài đặt qua Zalo
-              </button>
-            </div>
-          </div>
-        </div>
 
-        {/* Global Footer Bottom copyright */}
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-slate-200/80 pt-8 text-xs text-slate-500 text-center">
-          
-          <div className="flex items-center gap-3 text-left">
-            <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center">
-              <span className="text-slate-900 font-bold text-xs font-display">MKT</span>
-            </div>
-            <div className="flex flex-col min-w-0 pr-2">
-              <span className="text-slate-700 font-bold">© {new Date().getFullYear()} MKT TikPro Solutions.</span>
-              <span className="text-[10px] text-slate-450 mt-0.5">Phần mềm tăng mắt xem livestream thông minh số 1 Việt Nam.</span>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-6">
-            <a href="#about" className="hover:text-slate-800 transition-colors">Điều khoản dịch vụ</a>
-            <a href="#about" className="hover:text-slate-800 transition-colors">Chính sách bảo mật</a>
-            <span className="text-slate-300">|</span>
-            <span className="text-slate-500 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              Hệ thống lõi bảo mật cấp cao
-            </span>
-          </div>
-        </div>
-      </footer>
 
       {/* Floating Back To Top Button */}
       {showBackToTop && (

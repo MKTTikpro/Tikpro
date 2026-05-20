@@ -7,18 +7,18 @@ export default function Simulator() {
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
   return (
-    <div className="max-w-4xl mx-auto w-full" id="live-simulator">
+    <div className="max-w-[1160px] mx-auto w-full px-2 sm:px-6" id="simulator-player">
       {/* Premium glowing video container with full-width & 16:9 aspect ratio */}
-      <div className="relative w-full aspect-[16/9] rounded-[24px] bg-white border border-slate-200 p-2 shadow-xl hover:shadow-2xl transition-all duration-300 group overflow-hidden">
+      <div className="relative w-full aspect-[16/9] rounded-[28px] sm:rounded-[36px] bg-white border border-slate-200/90 p-2 sm:p-3 shadow-2xl hover:shadow-3xl transition-all duration-300 group overflow-hidden">
         
         {/* Absolute glowing gradients for a gorgeous 3D color pop */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-to-tr from-brand-pink/10 to-brand-cyan/10 blur-[60px] pointer-events-none rounded-full" />
         
         {/* TikTok pink & cyan glowing double border overlay */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-brand-pink via-rose-500 to-brand-cyan rounded-[25px] opacity-75 group-hover:opacity-100 blur-[2px] transition-opacity duration-500 pointer-events-none" />
+        <div className="absolute -inset-1 bg-gradient-to-r from-brand-pink via-rose-500 to-brand-cyan rounded-[29px] sm:rounded-[37px] opacity-75 group-hover:opacity-100 blur-[2px] transition-opacity duration-500 pointer-events-none" />
         
         {/* Inner card containing the iframe or high-definition trigger cover with rounded corners */}
-        <div className="relative w-full h-full rounded-[20px] overflow-hidden bg-slate-950 z-10 shadow-inner">
+        <div className="relative w-full h-full rounded-[24px] sm:rounded-[28px] overflow-hidden bg-slate-950 z-10 shadow-inner">
           {isPlaying ? (
             <iframe
               width="100%"
