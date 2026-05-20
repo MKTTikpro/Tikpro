@@ -1,0 +1,6 @@
+{
+  "name": "MKT TikPro",
+  "description": "Premium TikTok Live viewer, comment, and engagement booster platform to scale streams, automate interactions, and increase sales conversions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
